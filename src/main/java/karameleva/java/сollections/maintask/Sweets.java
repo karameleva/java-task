@@ -3,7 +3,6 @@ package karameleva.java.сollections.maintask;
 import java.util.*;
 
 public class Sweets extends Confectionery {
-
     private SweetsType type;
 
     public Sweets(String name, int sugarValue, double price, int weight, SweetsType type) {

@@ -46,7 +46,6 @@ public class Airport {
         return planeWithMaxCapacity;
     }
 
-
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
         List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
@@ -130,5 +129,4 @@ public class Airport {
     public Airport(List<? extends Plane> planes) {
         this.planes = planes;
     }
-
 }

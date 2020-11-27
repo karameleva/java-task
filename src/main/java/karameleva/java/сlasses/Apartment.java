@@ -32,7 +32,7 @@ public class Apartment {
         }
 
         public int getHouse() {
-                return house;
+            return house;
         }
 
         public void setHouse(int house) {

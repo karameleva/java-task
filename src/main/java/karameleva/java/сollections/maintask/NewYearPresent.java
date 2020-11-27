@@ -5,7 +5,6 @@ import java.util.*;
 import static karameleva.java.сollections.maintask.SweetsType.*;
 
 public class NewYearPresent {
-
     private static List<? extends Confectionery> confectioneries;
 
     public NewYearPresent(List<? extends Confectionery> confectioneries) {
@@ -146,22 +145,3 @@ public class NewYearPresent {
         return sweetsAccordingToSugar;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

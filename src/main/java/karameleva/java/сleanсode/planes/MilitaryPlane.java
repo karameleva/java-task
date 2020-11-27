@@ -5,10 +5,10 @@ import karameleva.java.сleanсode.models.MilitaryType;
 import java.util.Objects;
 
 public class MilitaryPlane extends Plane{
-
     private MilitaryType typeOfMilitaryPlane;
 
-    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType typeOfMilitaryPlane) {
+    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance,
+                         int maxLoadCapacity, MilitaryType typeOfMilitaryPlane) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
         this.typeOfMilitaryPlane = typeOfMilitaryPlane;
     }

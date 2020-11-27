@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
 public class MainTask {
     public static void main (String [] args) {
         List<Confectionery> confectioneries = new ArrayList<>();
