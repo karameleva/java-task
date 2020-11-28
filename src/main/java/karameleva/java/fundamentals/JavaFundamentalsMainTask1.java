@@ -5,4 +5,3 @@ public class JavaFundamentalsMainTask1 {
         System.out.println("Hello, " + args[0]);
     }
 }
-

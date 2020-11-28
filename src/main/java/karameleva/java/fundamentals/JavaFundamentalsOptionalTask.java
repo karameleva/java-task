@@ -7,15 +7,16 @@ public class JavaFundamentalsOptionalTask {
 
     public static Integer[] inputArray ( ) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите количество цифр: ");
+        System.out.println("Please, enter amount of numbers: ");
         int size = scan.nextInt();
         Integer [] array = new Integer[size];
         for (int i = 0; i < array.length; i++) {
-            System.out.println("Введите число: ");
+            System.out.println("Please, enter a number: ");
             array[i] = scan.nextInt();
         }
         return array;
     }
+
     public static int getNumberOfDifDigs(int[] b) {
         int numberOfDifDigs = 1;
         if (b.length > 0) {
@@ -25,6 +26,7 @@ public class JavaFundamentalsOptionalTask {
         } else numberOfDifDigs = 1;
         return numberOfDifDigs;
     }
+
     public static int[] numberToArray(Integer a) {
         int[] aArray = new int[a.toString().length()];
         for (int i = a.toString().length() - 1; i >= 0; i--) {
@@ -33,25 +35,23 @@ public class JavaFundamentalsOptionalTask {
         }
         return aArray;
     }
+
     public static void main(String[] args) {
         Scanner t = new Scanner(System.in);
         int task = 0;
         while (task != 8) {
             System.out.println("\n---------------------------------------------------------------------------------" +
-                    "\n1. Найти самое короткое и самое длинное число. Вывести найденные числа и их длину." +
-                    "\n2. Вывести числа в порядке возрастания (убывания) значений их длины." +
-                    "\n3. Вывести на консоль те числа, длина которых меньше (больше) средней длины по всем числам, " +
-                    "а также длину." +
-                    "\n4. Найти число, в котором количество различных цифр минимально. Если таких чисел несколько, " +
-                    "найти первое из них." +
-                    "\n5. Найти количество чисел, содержащих только четные цифры, а среди оставшихся — количество " +
-                    "чисел с равным числом четных и нечетных цифр." +
-                    "\n6. Найти число, цифры в котором идут в строгом порядке возрастания. Если таких чисел " +
-                    "несколько, найти первое из них." +
-                    "\n7. Найти число, состоящее только из различных цифр. Если таких чисел несколько, " +
-                    "найти первое из них." +
-                    "\n8. Выход");
-            System.out.println("\nВведите номер задания, которое следует выполнить: ");
+                    "\n1. Find the shortest and longest number. Print the found numbers and their length." +
+                    "\n2. Print numbers in ascending (descending) order of their lengths." +
+                    "\n3. Print numbers which length is less (more) than the average length for all numbers and length."+
+                    "\n4. Find the number in which amount of different digits is minimal. " +
+                    "If there are several numbers, find the first one." +
+                    "\n5. Find amount of numbers with only even digits, and among the rest -" +
+                    "numbers with equal amount of  odd and even digits. " +
+                    "\n6. Find the number with digits in strict ascending order. If there are several numbers, find the first one." +
+                    "\n7. Find the number with only different digits. If there are several numbers, find the first one." +
+                    "\n8. Exit");
+            System.out.println("\nPlease, choose the number af the task: ");
             task = t.nextInt();
             switch (task) {
                 case 1:
@@ -76,10 +76,10 @@ public class JavaFundamentalsOptionalTask {
                     differentDigits();
                     break;
                 case 8:
-                    System.out.println("До свидания!");
+                    System.out.println("Good Bye!");
                     break;
                 default:
-                    System.out.println("Вы ввели некорректное число. Попробуйте ещё раз");
+                    System.out.println("You entered incorrect number. Please, try one more time: ");
             }
         }
     }
@@ -93,17 +93,17 @@ public class JavaFundamentalsOptionalTask {
             min = Math.min(min, array[i].toString().length());
         }
         if (max != min) {
-            System.out.print("Длина самых коротких чисел составляет " + min + ". Это числа: ");
+            System.out.print("The length of the shortest numbers is " + min + ". That numbers are: ");
             for (Integer elem : array) {
                 if (elem.toString().length() == min)
                     System.out.print(elem + "; ");
             }
-            System.out.print("\nДлина самых длинных чисел составляет " + max + ". Это числа: ");
+            System.out.print("\nThe length of the longest numbers is " + max + ". That numbers are: ");
             for (Integer elem : array) {
                 if (elem.toString().length() == max)
                     System.out.print(elem + "; ");
             }
-        } else System.out.println("Все числа имеют одинаковую длину " + min + ".");
+        } else System.out.println("All numbers are the same length " + min + ".");
     }
 
     public static void sort() {
@@ -125,7 +125,7 @@ public class JavaFundamentalsOptionalTask {
                     }
                 }
             }
-            System.out.println("Числа в порядке возрастания значений их длины: " + Arrays.toString(array));
+            System.out.println("The numbers in ascending order of their length: " + Arrays.toString(array));
             swap = true;
             while (swap) {
                 swap = false;
@@ -138,9 +138,9 @@ public class JavaFundamentalsOptionalTask {
                     }
                 }
             }
-            System.out.println("Числа в порядке убывания значений их длины: " + Arrays.toString(array));
+            System.out.println("The numbers in descending order of their length: " + Arrays.toString(array));
         } else {
-            System.out.println("Все числа одной длины");
+            System.out.println("All numbers are the same length");
         }
     }
 
@@ -151,14 +151,14 @@ public class JavaFundamentalsOptionalTask {
             sum += array[i].toString().length();
         }
         double aver =  sum / array.length;
-        System.out.println("Средняя длина чисел: " +  aver);
-        System.out.print("Числа, длина которых меньше средней (длина числа): ");
+        System.out.println("Average length of the numbers is " +  aver);
+        System.out.print("The numbers with length which is less then average (length of the number): ");
         for (Integer elem : array) {
             if (elem.toString().length() < aver) {
                 System.out.print(elem + " (" + elem.toString().length() + "); ");
             }
         }
-        System.out.print("\nЧисла, длина которых больше средней (длина числа): ");
+        System.out.print("\nThe numbers with length which is more then average (length of the number): ");
         for (Integer elem : array) {
             if (elem.toString().length() > aver) {
                 System.out.print(elem + " (" + elem.toString().length() + "); ");
@@ -180,7 +180,7 @@ public class JavaFundamentalsOptionalTask {
             numberWithMinDifDigs = matchTemp < match ? array[i] : numberWithMinDifDigs;
             match = Math.min(match, matchTemp);
         }
-        System.out.println("Первое число с минимальным количеством различных цифр: " + numberWithMinDifDigs);
+        System.out.println("First number with min amount of different digits: " + numberWithMinDifDigs);
     }
 
     public static void findEverAndOdd() {
@@ -201,8 +201,8 @@ public class JavaFundamentalsOptionalTask {
             numberOfEver = ever == elem.toString().length() ? ++numberOfEver : numberOfEver;
             numberOfOddAndEver = ever == odd ? ++numberOfOddAndEver : numberOfOddAndEver;
         }
-        System.out.println("Количество чисел, содержащих только четные цифры: " + numberOfEver);
-        System.out.println("Количество чисел с равным числом четных и нечетных цифр: " + numberOfOddAndEver);
+        System.out.println("Amount of the numbers containing only even digits is " + numberOfEver);
+        System.out.println("Amount of the numbers containing equal amount of  odd and even digits: " + numberOfOddAndEver);
     }
 
     public static void ascendingOrder() {
@@ -220,9 +220,9 @@ public class JavaFundamentalsOptionalTask {
             }
         }
         if (findFirstAscNum) {
-            System.out.println("Первое число, в котором цифры идут в строгом порядке возрастания " + array[i-1]);
+            System.out.println("First number with digits in strict ascending order is " + array[i-1]);
         } else {
-            System.out.println("Число не найдено");
+            System.out.println("Required number isn't found");
         }
     }
 
@@ -239,9 +239,9 @@ public class JavaFundamentalsOptionalTask {
             }
         }
         if (numberWithDifDigs) {
-            System.out.println("Первое число, состоящее из различных цифр " + array [i-1]);
+            System.out.println("First number containing only different digits is " + array [i-1]);
         } else {
-            System.out.println("число, состоящее из различных цифр не найдено");
+            System.out.println("Required number isn't found");
         }
     }
 }
