@@ -126,11 +126,11 @@ public class NewYearPresent {
         if (confectionary instanceof Sweets) {
             presentToPrint =  "\n'" + confectionary.name + "' (" +
                     ((Sweets) confectionary).getType() +
-                    "), " + amount + "шт.";
+                    "), " + amount + "pc.";
         } else if (confectionary instanceof FlourConfection) {
             presentToPrint = "\n'" + confectionary.name + "' (" +
                     ((FlourConfection) confectionary).getType() +
-                    "), " + amount + "шт.";
+                    "), " + amount + "pc.";
         }
         return presentToPrint;
     }
