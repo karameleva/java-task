@@ -31,21 +31,20 @@ public class JavaClassesTask6 {
     }
 
     public static int showMenu (Scanner scan) {
-        System.out.println("Вывести: \n1) список квартир, имеющих заданное число комнат; " +
-               "\n2) список квартир, имеющих заданное число комнат и расположенных на этаже, " +
-               "\nкоторый находится в заданном промежутке; " +
-               "\n3) список квартир, имеющих площадь, превосходящую заданную." +
-               "\n\nВведите номер задания  " );
+        System.out.println("Print: \n1) List of apartments with required amount of rooms; " +
+               "\n2) List of apartments located between required floors with required amount of rooms;" +
+               "\n3) List of apartments with  bigger area than given." +
+               "\n\nPlease, choose the task: " );
         int task = scan.nextInt();
         while (task < 1 || task > 3) {
-            System.out.println("Неверно введен номер задания. Попробуй ещё раз: " );
+            System.out.println("Incorrect number of the task. Please, try again: " );
             task = scan.nextInt();
         }
         return task;
     }
 
     public static void getApartmentByRoom (Scanner scan, Apartment [] apartments) {
-        System.out.print("Введите количество комнат");
+        System.out.print("Please, enter number of rooms: ");
         int roomAmount = scan.nextInt();
         boolean flag = false;
         if (roomAmount >= 0) {
@@ -56,19 +55,19 @@ public class JavaClassesTask6 {
                 }
             }
         } else {
-            throw new IllegalArgumentException("Неверно введены данные");
+            throw new IllegalArgumentException("Incorrect data");
         }
         if (!flag) {
-            System.out.println("Данные не найдены");
+            System.out.println("Data are not found");
         }
     }
 
     public static void getApartmentByRoomAndFloor (Scanner scan, Apartment [] apartments) {
-        System.out.print("Введите количество комнат  ");
+        System.out.print("Please, enter number of rooms: ");
         int roomAmount = scan.nextInt();
-        System.out.print("Введите начальный этаж  ");
+        System.out.print("Please, enter number of start floor  ");
         int floor1 = scan.nextInt();
-        System.out.print("Введите конечный этаж  ");
+        System.out.print("Please, enter number of finish floor  ");
         int floor2 = scan.nextInt();
         boolean flag = false;
         if (roomAmount >= 0 && floor1 >= 0 && floor2 >= 0) {
@@ -81,15 +80,15 @@ public class JavaClassesTask6 {
                 }
             }
         } else {
-            throw new IllegalArgumentException("Неверно введены данные");
+            throw new IllegalArgumentException("Incorrect data");
         }
         if (!flag) {
-        System.out.println("Данные не найдены");
+        System.out.println("Data are not found");
         }
     }
 
     public static void getApartmentBySquare (Scanner scan, Apartment [] apartments) {
-        System.out.print("Введите площадь  " );
+        System.out.print("Please, enter the area  " );
         double squareSearch = scan.nextDouble();
         boolean flag = false;
         if (squareSearch > 0) {
@@ -100,13 +99,10 @@ public class JavaClassesTask6 {
                 }
             }
         } else {
-            throw new IllegalArgumentException("Неверно введены данные" );
+            throw new IllegalArgumentException("Incorrect data" );
         }
         if (!flag) {
-            System.out.println("Данные не найдены" );
+            System.out.println("Data are not found" );
         }
     }
 }
-
-
-

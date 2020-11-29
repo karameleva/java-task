@@ -1,7 +1,6 @@
 package karameleva.java.сlasses;
 
 public class Apartment {
-
         private Street street;
         private int house;
         private int floor;
@@ -39,7 +38,7 @@ public class Apartment {
             if (house > 0) {
                 this.house = house;
             } else {
-                throw new IllegalArgumentException("Неверно введен номер дома");
+                throw new IllegalArgumentException("Incorrect number of the house");
             }
         }
 
@@ -51,7 +50,7 @@ public class Apartment {
             if (floor >= 0) {
                 this.floor = floor;
             } else {
-                throw new IllegalArgumentException("Неверно введен этаж");
+                throw new IllegalArgumentException("Incorrect number of the floor");
             }
         }
 
@@ -63,7 +62,7 @@ public class Apartment {
             if (apartmentID > 0) {
                 this.apartmentID = apartmentID;
             } else {
-                throw new IllegalArgumentException("Неверно введен номер квартиры");
+                throw new IllegalArgumentException("Incorrect number of the apartment");
             }
         }
 
@@ -75,7 +74,7 @@ public class Apartment {
             if (rooms >=0) {
                 this.rooms = rooms;
             } else {
-                throw new IllegalArgumentException("Неверно введено количество комнат");
+                throw new IllegalArgumentException("Incorrect amount of rooms");
             }
         }
 
@@ -87,7 +86,7 @@ public class Apartment {
             if (getSquare() > 0) {
                 this.square = square;
             } else {
-                throw new IllegalArgumentException("Неверно введена площадь квартиры");
+                throw new IllegalArgumentException("Incorrect square of the apartment");
             }
         }
 
@@ -107,14 +106,14 @@ public class Apartment {
             if (lifetime >= 2000) {
                 this.lifetime = lifetime;
             } else {
-                throw new IllegalArgumentException("Неверно введен срок эксплуатации дома");
+                throw new IllegalArgumentException("Incorrect lifetime of the house");
             }
         }
 
         @Override
         public String toString() {
-            return street + " д." + house + " кв." + apartmentID + " (" + floor + "-й этаж, " + rooms + "-комн., " +
-                    square + " кв.м.), " + buildingType + " дом, срок эксплуатации до " + lifetime + " г.";
+            return street + " str., house " + house + ", app." + apartmentID + " (fl." + floor +  rooms + " rooms, " +
+                    square + " sq.m.), " + buildingType + " house, lifetime till " + lifetime;
         }
 
 
