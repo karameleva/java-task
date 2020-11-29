@@ -19,18 +19,18 @@ public class NewYearPresent {
 
     public int getAmount(String typeOfConfectionery) {
         Scanner scan = new Scanner(System.in);
-        System.out.println(typeOfConfectionery + ".\nВведите количество, которое вы хотите положить в новогодний подарок (шт):  ");
+        System.out.println(typeOfConfectionery + ".\nPlease, enter amount which you want to put in New Year Present: ");
         int amount = scan.nextInt();
         while (amount < 0) {
-            System.out.println("Введено некорректное количество. Попробуйте еще раз. \nВведите количество:  ");
+            System.out.println("Incorrect number. Please, try again. \nEnter amount: ");
             amount = scan.nextInt();
         }
         return amount;
     }
 
     public Map <SweetsType, Integer> getSweetsMap () {
-        int amountChocolateSweetsInPresent = getAmount("Шоколадные конфеты");
-        int amountCaramelSweetsInPresent = getAmount("Карамель");
+        int amountChocolateSweetsInPresent = getAmount("Chocolate sweets");
+        int amountCaramelSweetsInPresent = getAmount("Caramel sweets");
         Map <SweetsType, Integer> mapSweets = new HashMap<>();
         mapSweets.put (CHOCOLATE, amountChocolateSweetsInPresent);
         mapSweets.put (CARAMEL, amountCaramelSweetsInPresent);
@@ -38,8 +38,8 @@ public class NewYearPresent {
     }
 
     public Map <FlourConfectionType, Integer> getFlourConfectionMap () {
-        int amountBiscuitsInPresent = getAmount("Печенье");
-        int amountGingerbreadInPresent = getAmount("Пряники");
+        int amountBiscuitsInPresent = getAmount("Biscuits");
+        int amountGingerbreadInPresent = getAmount("Gingerbread");
         Map <FlourConfectionType, Integer> mapFlourConfection = new HashMap<>();
         mapFlourConfection.put (FlourConfectionType.BISCUITS, amountBiscuitsInPresent);
         mapFlourConfection.put (FlourConfectionType.GINGERBREAD, amountGingerbreadInPresent);
@@ -63,7 +63,7 @@ public class NewYearPresent {
             }
         }
         if (present.isEmpty()) {
-            throw new IllegalArgumentException("Новогодний подарок не собран!");
+            throw new IllegalArgumentException("New Year Present is empty!");
         }
         return present;
     }
@@ -84,7 +84,7 @@ public class NewYearPresent {
             }
         }
         if (sweets.isEmpty()) {
-            throw new IllegalArgumentException("Конфеты в новогоднем подарке не найдены!");
+            throw new IllegalArgumentException("Sweets are not found in the New Year Present!");
         }
         sweets.sort(Comparator.comparingInt(Confectionery::getWeight));
         return sweets;
@@ -92,19 +92,19 @@ public class NewYearPresent {
 
     public List <Sweets> searchSweetAccordingToSugar() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("\nДля поиска конфеты по содержанию сахара, введите минимальное количество сахара в конфете");
+        System.out.println("\nPlease, enter minimum amount of sugar in the sweet: ");
         int minSugar = scan.nextInt();
 
         while (minSugar < 0) {
-            System.out.println("Введено некорректное количество. Попробуйте еще раз. " +
-                    "\nВведите минимальное количество сахара в конфете:  ");
+            System.out.println("Incorrect amount. Please try again. " +
+                    "\nPlease, enter minimum amount of sugar in the sweet: ");
             minSugar = scan.nextInt();
         }
-        System.out.println("Введите максимальное количество сахара в конфете");
+        System.out.println("Please, enter maximum amount of sugar in the sweet: ");
         int maxSugar = scan.nextInt();
         while (maxSugar < 0) {
-            System.out.println("Введено некорректное количество. Попробуйте еще раз. " +
-                    "\nВведите максимальное количество сахара в конфете:  ");
+            System.out.println("Incorrect amount. Please try again. " +
+                    "\nPlease, enter maximum amount of sugar in the sweet: ");
             maxSugar = scan.nextInt();
         }
         List <Sweets> sweets  = getSweetsListInNewYearPresentSortedByWeight();
@@ -115,7 +115,7 @@ public class NewYearPresent {
             }
         }
         if (sweets.isEmpty()) {
-            throw new IllegalArgumentException("Конфеты с заданым содержанием сахара не найдены!");
+            throw new IllegalArgumentException("Sweets with requested amount of sugar are not found! ");
         }
         return sweets;
     }

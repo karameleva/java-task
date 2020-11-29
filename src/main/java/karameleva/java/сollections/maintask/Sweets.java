@@ -26,8 +26,8 @@ public class Sweets extends Confectionery {
     @Override
     public String toString() {
         return "\n'" + name + "' (" + type.getRealName() +
-                "), сахар: " + sugarValue +
-                ", вес: " + weight + " гр.";
+                "), sugar: " + sugarValue +
+                ", weight: " + weight + " gr";
     }
 
     public SweetsType getType() {

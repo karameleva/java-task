@@ -1,7 +1,7 @@
 package karameleva.java.сollections.maintask;
 
 public enum SweetsType {
-    CHOCOLATE ("Шоколадные конфеты"), CARAMEL ("Карамель");
+    CHOCOLATE ("Chocolate sweets"), CARAMEL ("Caramel sweets");
     private String realName;
 
     SweetsType(String realName) {

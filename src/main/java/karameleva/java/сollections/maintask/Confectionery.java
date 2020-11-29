@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Confectionery {
     String name;
-    int sugarValue; // per 100 gr
-    double price; // per 1000 gr
-    int weight; // gr per 1 confectionery
+    int sugarValue;
+    double price;
+    int weight;
 
     public Confectionery(String name, int sugarValue, double price, int weight) {
         this.name = name;

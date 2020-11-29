@@ -1,7 +1,7 @@
 package karameleva.java.сollections.maintask;
 
 public enum FlourConfectionType {
-    BISCUITS ("Печенье"), GINGERBREAD("Пряник");
+    BISCUITS ("Biscuits"), GINGERBREAD("Gingerbread");
     private String realName;
 
     FlourConfectionType(String realName) {
